@@ -13,7 +13,7 @@ This tool is used for purging (deleting) duplicate files from your directory tre
 - The primary usage is to delete files in the LAN-side `DCIM/Camera` folder that also exist in other folders within `DCIM/`, as described above.
 - Nothing is deleted unless the `--purge` switch is specified.  Without `--purge` duplicates are only listed.
 - You may have other photo trees from prior phones and backups on your hard disk.  `--second-tree` mode supports deleting duplicate files from these older/other backups that also exist in the _main_ tree (`main_root`).  In the `Two tree mode, and --no-time and --no-size switches` example below the file `China Wall Video.MOV` would be deleted from the secondary tree folder `/mnt/share/media/Pictures/Dunes/Dan`, and retained in the main tree folder `/mnt/share/media/Chris phone pix/Dunes`.
-- photodedup works on all file types, not ust media files.  When using the `--second-tree` mode duplicates found in both the main tree and the second tree may be deleted from the second tree regardless of file type/extension.  Note that single tree mode specifically looks for duplicates relative to the `DCIM/Camera` folder, so this mode is pretty photo/video specific.  Other tools for finding duplicates may be better suited to your needs, including CCleaner and Beyond Compare.
+- photodedup works on all file types, not just media files.  When using the `--second-tree` mode duplicates found in both the main tree and the second tree may be deleted from the second tree regardless of file type/extension.  Note that single tree mode specifically looks for duplicates relative to the `DCIM/Camera` folder, so this mode is pretty photo/video specific.  Other tools for finding duplicates may be better suited to your needs, including CCleaner and Beyond Compare.
 - Some evil file management tools clobber the file modification datetime on files.  (Both FolderSync and Simple Gallery are well behaved.)  This gives rise to duplicate photos that in the trees that have different modification times.  The `--no-time` switch may be specified to disable matching on datetime.  See `Two tree mode, and --no-time and --no-size switches` example below for file `IMG_20140426_115922_309.jpg`.
 - Eventually you'll have files from different cameras that have the same filename but different datetime and size.  photodedup will recognize these as different files and not attempt any purges.  Alternately, you may edit a file and save it to the same filename, producing a duplicate with a different size.  To identify the original and edited versions as duplicates specify the `--no-size` switch along with the `--no-time` switch.  See `Two tree mode, and --no-time and --no-size switches` example below for file `DSCF2363.JPG`.  Three different versions of this file exist, some with differing datetime stamps.  Manually deleting these duplicates may be most appropriate.
 - Various tools may create `.Thumbnails` subdirectories.  These may be deleted using the `thumbs` switch.
@@ -93,7 +93,7 @@ Found instance(s) of File <DSCF2363.JPG> in second tree that exist in the main t
     Second tree:  Sun Aug  5 20:28:50 2007      803603 bytes    /mnt/share/media/Pictures/Mabul07/Select
     Second tree:  Wed Apr 10 13:50:56 2013     4146999 bytes    /mnt/share/media/Pictures/Bottlebrush
     Second tree:  Mon Dec 21 14:45:56 2009     3119118 bytes    /mnt/share/media/Pictures/Family gatherings/Xmas 09
-
+Found  964  duplicate files.  Deleted  0  duplicate files.
 ```
 
 ## Known issues
