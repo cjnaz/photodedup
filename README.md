@@ -21,7 +21,7 @@ This tool is used for purging (deleting) duplicate files from your directory tre
 
 
 ## Changes in the most recent release
-- 200306 v0.1  New
+- 200602 v0.2  Fixed typo in argparse for --purge switch.
 
 ## Setup
 - Simply place the script file photodedup in a folder in your path environment variable, or run it while specifying the full path to the file.  
@@ -46,9 +46,8 @@ optional arguments:
   --second-tree SECOND_TREE
                         Root of other archive tree.  Duplicate files will be deleted from this tree.
   --thumbs              Find .Thumbnails directories.  Delete with --purge.
-  --purge               Print status, but copy/delete no files.
+  --purge               Do identified deletes.  Without --purge, print duplicates only.
   -V, --version         Return version number and exit.
-
 ```
 
 ## Example runs
@@ -100,4 +99,5 @@ Found  964  duplicate files.  Deleted  0  duplicate files.
 - none
 
 ## Revision history
+- 200602 v0.2  Fixed --purge help typo
 - 200306 v0.1  New
