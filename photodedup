@@ -7,13 +7,14 @@ from __future__ import unicode_literals  # This sets py2.7 default string litera
 from __future__ import print_function    # This redefines print as a function, as in py3.  Forces writing compatible code.
     # above two not needed for Py3
 
-__version__ = "v0.1 200306"
+__version__ = "v0.2 200602"
 
 
 #==========================================================
 #
 #  Chris Nelson, January 2019-2020
 #
+# 200602 v0.2  Fixed --purge help typo
 # 200306 v0.1  New
 #
 # Changes pending
@@ -173,7 +174,7 @@ if __name__ == '__main__':
                         help="Find .Thumbnails directories.  Delete with --purge.",
                         action='store_true')
     parser.add_argument('--purge',
-                        help="Print status, but copy/delete no files.",
+                        help="Do identified deletes.  Without --purge, print duplicates only.",
                         action='store_true')
     parser.add_argument('-V', '--version', action='version', version='%(prog)s ' + __version__,
                         help="Return version number and exit.")
